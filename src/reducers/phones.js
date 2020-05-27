@@ -1,13 +1,22 @@
+import * as R from 'ramda';
 import { fetchPhones as fetchPhonesApi } from './../api/index';
 
-const FETCH_PHONES_START = 'FETCH_PHONES_START';
-const FETCH_PHONES_SUCCESS = 'FETCH_PHONES_SUCCESS';
-const FETCH_PHONES_FAILURE = 'FETCH_PHONES_FAILURE';
+import {
+  FETCH_PHONES_SUCCESS,
+  FETCH_PHONES_START,
+  FETCH_PHONES_FAILURE,
+} from './../actionTypes';
 
 const initialState = {};
 
-export default (state = initialState) => {
-  return state;
+export default (state = initialState, { type, payload }) => {
+  switch (type) {
+    case FETCH_PHONES_SUCCESS:
+      const newValues = R.indexBy(R.prop('id'), payload);
+      return R.merge(state, newValues);
+    default:
+      return state;
+  }
 };
 
 export const fetchPhones = () => async (dispatch) => {
