@@ -1,3 +1,5 @@
+import { fetchPhones as fetchPhonesApi } from './../api/index';
+
 const FETCH_PHONES_START = 'FETCH_PHONES_START';
 const FETCH_PHONES_SUCCESS = 'FETCH_PHONES_SUCCESS';
 const FETCH_PHONES_FAILURE = 'FETCH_PHONES_FAILURE';

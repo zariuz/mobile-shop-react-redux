@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import { fetchPhones } from './../../reducers/phones';
+
 class Phones extends Component {
   componentDidMount() {
     this.props.fetchPhones();
@@ -12,6 +14,6 @@ class Phones extends Component {
 }
 
 const mapDispatchToProps = {
-  fetchPhones;
+  fetchPhones,
 };
 export default connect(null, mapDispatchToProps)(Phones);
