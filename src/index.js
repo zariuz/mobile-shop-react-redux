@@ -5,13 +5,11 @@ import { ConnectedRouter } from 'connected-react-router';
 import { store, history } from './reducers/store';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import Layout from './containers/layout';
+import { routes } from './routes';
 
 ReactDOM.render(
   <Provider store={store}>
-    <ConnectedRouter history={history}>
-      <Layout />
-    </ConnectedRouter>
+    <ConnectedRouter history={history}>{routes}</ConnectedRouter>
   </Provider>,
   document.getElementById('root')
 );

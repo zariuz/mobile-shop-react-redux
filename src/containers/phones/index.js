@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 import { fetchPhones, loadMorePhones } from './../../reducers/phones';
 import { getPhones } from './../../selectors';
+import Layout from './../layout/index';
 
 class Phones extends Component {
   componentDidMount() {
@@ -38,7 +39,7 @@ class Phones extends Component {
   render() {
     const { phones, loadMorePhones } = this.props;
     return (
-      <div>
+      <Layout>
         <div className="books row">
           {phones.map((phone, index) => this.renderPhone(phone, index))}
         </div>
@@ -52,7 +53,7 @@ class Phones extends Component {
             </button>
           </div>
         </div>
-      </div>
+      </Layout>
     );
   }
 }

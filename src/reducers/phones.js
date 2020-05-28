@@ -46,11 +46,9 @@ export const loadMorePhones = () => async (dispatch, getState) => {
   dispatch({ type: LOAD_MORE_PHONES_START });
 
   try {
-    debugger;
     const phones = await loadMorePhonesApi(offset);
     dispatch({ type: LOAD_MORE_PHONES_SUCCESS, payload: phones });
   } catch (err) {
-    debugger;
     dispatch({ type: LOAD_MORE_PHONES_FAILURE, payload: err, error: true });
   }
 };
