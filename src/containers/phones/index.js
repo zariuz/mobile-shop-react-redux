@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 import { fetchPhones, loadMorePhones } from './../../reducers/phones';
 import { getPhones } from './../../selectors';
-import Layout from './../layout/index';
+import Layout from './../layout';
 
 class Phones extends Component {
   componentDidMount() {

@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import {
   fetchPhones as fetchPhonesApi,
   loadMorePhones as loadMorePhonesApi,
-} from './../api/index';
+} from './../api';
 
 import { getRenderedPhonesLength } from './../selectors';
 
