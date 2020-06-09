@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as R from 'ramda';
+import { Link } from 'react-router-dom';
 
 import { fetchPhoneById } from './../../reducers/phones';
+import { addPhoneToBasket } from './../../reducers/basket';
 import { getPhoneById } from './../../selectors';
+import BasketCart from './../../components/basketCart';
 
 class Phone extends Component {
   componentDidMount() {
@@ -57,7 +60,27 @@ class Phone extends Component {
   }
 
   renderSidebar() {
-    return <div>Sidebar</div>;
+    const { phone, addPhoneToBasket } = this.props;
+    return (
+      <div>
+        <p className="lead">Quick shop</p>
+        <BasketCart />
+        <div className="form-group">
+          <h1>{phone.name}</h1>
+          <h2>${phone.price}</h2>
+        </div>
+        <Link to="/" className="btn btn-info btn-block">
+          Back to store
+        </Link>
+        <button
+          type="button"
+          className="btn btn-success btn-block"
+          onClick={() => addPhoneToBasket(phone.id)}
+        >
+          Add to cart
+        </button>
+      </div>
+    );
   }
 
   render() {
@@ -83,6 +106,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
   fetchPhoneById,
+  addPhoneToBasket,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Phone);
