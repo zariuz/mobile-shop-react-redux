@@ -6,6 +6,7 @@ import Phone from './containers/phone';
 export const routes = (
   <Switch>
     <Route path="/" component={Phones} exact />
+    <Route path="/categories/:id" component={Phones} exact />
     <Route path="/phones/:id" component={Phone} exact />
   </Switch>
 );

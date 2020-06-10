@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 
-import { ADD_PHONE_TO_BASKET } from '../actionTypes';
+import { ADD_PHONE_TO_BASKET } from './../actionTypes';
 
 const initialState = [];
 
@@ -11,8 +11,4 @@ export default (state = initialState, { type, payload }) => {
     default:
       return state;
   }
-};
-
-export const addPhoneToBasket = (id) => (dispatch) => {
-  dispatch({ type: ADD_PHONE_TO_BASKET, payload: id });
 };

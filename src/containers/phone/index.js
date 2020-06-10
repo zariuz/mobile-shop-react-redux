@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import * as R from 'ramda';
 import { Link } from 'react-router-dom';
 
-import { fetchPhoneById } from './../../reducers/phones';
-import { addPhoneToBasket } from './../../reducers/basket';
+import { fetchPhoneById, addPhoneToBasket } from './../../actions';
 import { getPhoneById } from './../../selectors';
 import BasketCart from './../../components/basketCart';
 

@@ -26,10 +26,3 @@ export default (state = initialState, { type, payload }) => {
       return state;
   }
 };
-
-export const searchPhone = (text) => (dispatch) => {
-  dispatch({
-    type: SEARCH_PHONE,
-    payload: text,
-  });
-};

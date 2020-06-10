@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { searchPhone } from './../../reducers/phonesPage';
+import { searchPhone } from './../../actions';
 
 class Search extends Component {
   constructor(props) {
