@@ -1,13 +1,14 @@
 import * as R from 'ramda';
+import request from 'superagent';
 
 import phones from './mockPhones';
 import categories from './mockCategories';
 
 export const fetchPhones = async () => {
-  return new Promise((resolve, reject) => {
-    resolve(phones);
-    //reject('error');
-  });
+  const { body } = await request.get(
+    'http://www.mocky.io/v2/5918b9461200001f1040dbeb'
+  );
+  return body.phones;
 };
 
 export const loadMorePhones = async ({ offset }) => {
